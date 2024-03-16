@@ -6,7 +6,7 @@ SOC(System-on-Chip) : Integrating all the hardware components on to the single c
 
 We have many Architectures, Here we are mainly focusing on **RISCV ARCHITECTURE** **(RISCV Based CPU Core - picorv32)**
 
-Sky130 Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK
+[Link Sky130 Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK](URL)
 
 Sky130 Day 2 - Good floorplan vs bad floorplan and introduction to library cells
 
