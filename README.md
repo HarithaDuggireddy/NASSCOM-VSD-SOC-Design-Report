@@ -47,7 +47,7 @@ __Macro's__: Macros are basically an Instructions that can vary from chip to chi
 
 Now If we take __(RISCV SoC)__ we can see in the above chip inside the core area. RISCV is an Open Source Instruction Set Architecture (ISA). It uses fewer instructions than other ISA's and less complex. So, It reduces the size and the power consumption of the chip.
 
-### RISCV (INSTRUCTION SET ARCHITECTURE):
+### RISCV (INSTRUCTION SET ARCHITECTURE)
   This nothing but a language of the computers, this is how we talk to the computers.
    
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **EX:** we have C program, to run that C program on a comuter Hardware or any chip, we need to compile C-program in It's assembly language program which is nothing but the RISCV assembly language program here, 
@@ -57,7 +57,7 @@ The interface between the RISCV and Computer hardware chip is a Hardware Descrip
 
        ** FLOW ** : Architecture spec -> RTL implementation -> Layout 
 
-### From Software Applications to Hardware:
+### From Software Applications to Hardware
 To run all the applications that we are using in our day-to-day life on hardware (which basically a computer) we need **System Software** as interface between them, that converts into a Binary Language (Machine Undertandable Language).
 
 **System Software Flow**:
@@ -71,6 +71,57 @@ will take this instructions and converts to Binary Language. This Binary values 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Instructions acts as an Abstract Interface (ISA) between the C language (all High Level Languages) and the Hardware (Any electronic Device). Instructions are the way how a user communicates with the computer.
 
 ### SOC DESIGN AND OPENLANE
+**All Components Of Open-Source ASIC Design**:  
+Important things to have for implementing any Digital ASIC Design are **RTL Description, EDA Tools, and PDK Data**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;There are many Open Sources Available for RTL Designs, EDA Tools and for PDK DATA. In that some are:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1)librarycores.org, opencores.org, github.com for RTL Designs
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2)OpenLANE, OpenROAD, Qflow for EDA Tools
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3) Google Released First PDK Source Sky130nm
+
+PDK's are generally a "lambda" based rules to seperate the design from technology. This is like an Interface between the Process Engineers and the design Engineers to make a manufaturable Layout.
+
+PDK stands for Process Design Kit. It include different files like Process Design Rules: (DRC, LVS, PEX , Device Models), Digital Standard Cell Libraries, I/O Libraries, Technology files, Process Design Rule Manuals, Design Kits for EDA Tools,Documentation and Guidelines
+
+>Still the 130nm chips has >6% of sales in the present market. As this has good performance that is good for the perticular application and less cost.
+> Intel: P4EE @ 3.46GHZ
+
+**RTL to GDS FLOW**:
+
+<img width="300" alt="Screenshot 2024-03-16 at 02 49 34" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/ed6e87c4-2c78-4660-a7dc-dd93a4a3fff3">
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Synthesis**: Converts RTL Code into circuit out of components from the standard cell linbrary (that has regular Layouts of the gates).
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Floor and Power Planning**: 
+
+&nbsp;&nbsp;&nbsp;&nbsp;1)Main thing here is to plan the silicon area and to create robust power distribution 
+network to power the cells.
+
+&nbsp;&nbsp;&nbsp;&nbsp;2)Partitioning the chip die between different system building blocks and place the IO PADS
+
+&nbsp;&nbsp;&nbsp;&nbsp;<img width="300" alt="Screenshot 2024-03-16 at 03 31 19" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/803bcea0-c7bd-445d-a134-2aebff26cdba">
+
+&nbsp;&nbsp;&nbsp;&nbsp;3)Macro floor - Planning: We define the Macro Dimensions, Pin Locations, Rows and Routing Tracks (which will be used in the Placement &nbsp;&nbsp;&nbsp;&nbsp;and Routing Stage)
+
+<img width="210" alt="Screenshot 2024-03-16 at 03 45 15" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/d5ead563-32de-4330-9a34-76d9c2f7ede0">
+
+&nbsp;&nbsp;&nbsp;&nbsp;4) In **Power Planning**, The chip is powered by Multiple VDD and GND Pins.
+
+&nbsp;&nbsp;&nbsp;&nbsp;5) The Power Pins are connected to all components through rings, and Vertical & Horizontal Straps (such parallel structures are build to &nbsp;&nbsp;&nbsp;&nbsp;reduce the resistance, Hence the IR Drop and to address the electromigration problem).
+
+&nbsp;&nbsp;&nbsp;&nbsp;6)Typically upper metal layers are used for the Power routing, because they are thicker and have lower resistance
+
+&nbsp;&nbsp;&nbsp;&nbsp;<img width="348" alt="Screenshot 2024-03-16 at 04 05 24" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/5f09377a-0e12-42a1-8cf1-9af5167fa7ae">
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Placement**:
+
+
+
+
+
 
 
 
