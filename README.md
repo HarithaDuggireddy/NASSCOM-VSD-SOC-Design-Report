@@ -24,7 +24,7 @@ Getting Knowledge on opensource EDA Tools, OpenLANE, SKY130nm PDk, QFN48 Package
 Let's Take an AURDUINO LEONARD Board. In that we have one processor chip. we have many interfaces around the processor they are 
 JTAG-UART FTDI, QSPI1-FLASH, I2C0-EEPROM, VCC/GND, ADc(QSP3), MUXED with GPIOS, SDRAM chip, DIrect I2C, direct QSPI, GPIO0-7, PWM0-3, GPIO8-14, PWM4-5
 
-If we go inside the processor        
+If we see inside the processor        
  <img width="300" alt="Screenshot 2024-03-15 at 16 06 05" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/409ee6de-9f78-4165-a0ee-9044921f61c7">
   
   The above picture shows the package named __QFN48__ (Quad Flat No-leads), this is a __48 pin__ package with __7mmx7mm area__.
@@ -117,6 +117,97 @@ network to power the cells.
 &nbsp;&nbsp;&nbsp;&nbsp;<img width="348" alt="Screenshot 2024-03-16 at 04 05 24" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/5f09377a-0e12-42a1-8cf1-9af5167fa7ae">
 
 &nbsp;&nbsp;&nbsp;&nbsp;**Placement**:
+
+&nbsp;&nbsp;&nbsp;&nbsp;1) Determining the locations of the cells. It is an important stage in the design flow, because it affects routabil- ity, performance, heat &nbsp;&nbsp;&nbsp;&nbsp;distribution, and to a less extent, power consumption of a design.
+
+&nbsp;&nbsp;&nbsp;&nbsp;2) Typically Placement is done in two steps: **Global** and followed by **Detailed** Placement
+
+&nbsp;&nbsp;&nbsp;&nbsp;3)Global Placement try's to find the optimal positions of the cells, But those positions are not final and some may have overlaps. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;<img width="180" alt="Screenshot 2024-03-16 at 14 34 04" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/8819b1b6-69bf-466d-9707-fe2a50bcdabb">
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;4)Detail Placement will alter those placements to be perfect without overlaps and easily routable.
+
+&nbsp;&nbsp;&nbsp;&nbsp;<img width="180" alt="Screenshot 2024-03-16 at 14 34 54" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/c16035e7-3cba-4d73-9b17-bd735e9b8a2c">
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Clock Tree Synthesis**:
+
+&nbsp;&nbsp;&nbsp;&nbsp;1) Before Routing the signals, we need to route the clock.
+
+&nbsp;&nbsp;&nbsp;&nbsp;2) We create a Clock districution network to connect clock to the all sequential elements with minimum skew and minimum Latency.
+
+&nbsp;&nbsp;&nbsp;&nbsp;3) Some clock Network algorithms are H-Tree, X-Tree, Method of Mean and Median, Geometric Matching Algorithms 
+
+&nbsp;&nbsp;&nbsp;&nbsp;4) The below Image shows the H-Tree shaped Clock Network
+
+&nbsp;&nbsp;&nbsp;&nbsp;<img width="180" alt="Screenshot 2024-03-16 at 14 39 07" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/ac0bd281-9dfe-4825-8044-eb13256432e3">
+
+&nbsp;&nbsp;&nbsp;&nbsp;**Signal Routing**:
+
+&nbsp;&nbsp;&nbsp;&nbsp;1) Implementing the Connctions using available metal layers.
+
+&nbsp;&nbsp;&nbsp;&nbsp;2) For each metal layer the PDK defines the thickness, pitch, Tracks and the minimum width, and the via's and contact sizes.
+
+&nbsp;&nbsp;&nbsp;&nbsp;<img width="329" alt="Screenshot 2024-03-16 at 15 07 30" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/be7783dc-4de0-4474-a677-c158e270e0df">
+
+>The Sky 130nm has total 6 layers of metals.
+
+&nbsp;&nbsp;&nbsp;&nbsp;3) The Lowest Layer is used for Local Interconnection (Titanium Nitrade Layer), Only used for short-distance conncetions.
+
+&nbsp;&nbsp;&nbsp;&nbsp;4) All other Layers are aluminium layers.
+
+&nbsp;&nbsp;&nbsp;&nbsp;<img width="300" alt="Screenshot 2024-03-16 at 15 06 03" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/4bb34438-7a7e-4f08-8ad8-9abbd9ed50f0">
+
+&nbsp;&nbsp;&nbsp;&nbsp;5) Global Routing generated the Routing Grids, and Detailed Routing uses the routing grids to implement the actual wiring.
+
+After completing the Routing we can contnue with the signoff process by verifying the layout. Two types of verification to caryy out are Physical and Timing Verification. Physical Verification involves DRC (Design Rule Checks), LVS(Layout Vs, Schematic), and Timing verfication Involves STA (Static Timing Analysis - Set-Up and Hols Checks) 
+
+<img width="150" alt="Screenshot 2024-03-16 at 15 28 20" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/2547ae0f-62c0-4700-bcfb-ab06d9cc45d7">
+
+1) openLANE is a Tool used to perform entire RTL to GDSII flow (Openlane is Integrated with Many open sources like OPENROAD, yosis, Qflow, MAGIC VLSI Layout Tool, Fault, ABC, K_Layout)
+
+2) Tuned for Sky 130nm PDK but also supports XFAB180 and GF130G
+
+3) Can be used for both Macros and Chip Layouts
+
+4) Two Modes of operation: Autonomous or Iterative
+
+5) we can also use openLANE for Regression Testing
+
+6) Physical Implementation (Automatic Place and Route is carried out using OPENROAD App)
+
+7) openLANE ASIC flow is shown in below image with the open sources involve in each step to perform the flow.
+
+<img width="300" alt="Screenshot 2024-03-16 at 15 40 47" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/093ed014-6759-46b1-bba4-4a86c5aa2cb1">
+
+**Design For Test** :
+
+This is an optional step to perform after the Synthesis. This involves Scan Insertion, Automatic Test Pattern Generation (ATPG), Test Patterns Compaction, Fault Coverage and Fault Simulation.
+
+**Antenna Rule Violations**:
+
+During the Long Metal Routes, There is chance of reactive ion etching, that causes charge to accumulate on the wire. Due to this generated charges chances of breaking the transistor gates are high. To avoid this we have two solution.
+
+ &nbsp;&nbsp;&nbsp;&nbsp;1) **Bridging** : This attaches a higher metal layers in between (Requires Router Awarness)
+
+&nbsp;&nbsp;&nbsp;&nbsp;<img width="383" alt="Screenshot 2024-03-16 at 16 28 39" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/a6b7ba44-99b4-40f4-8b04-25cf8c789d6b">
+
+ &nbsp;&nbsp;&nbsp;&nbsp;2) **Antenna Diodes** : Adding Antenna diodes can leak away the accumulated charges (Antenna Diodes are provided by the standard Cell &nbsp;&nbsp;&nbsp;&nbsp;Library file)
+
+&nbsp;&nbsp;&nbsp;&nbsp;<img width="144" alt="Screenshot 2024-03-16 at 16 29 11" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/f473f3b2-4bae-4617-9009-d504c3dcfa16">
+
+&nbsp;&nbsp;&nbsp;&nbsp;3) Preventive approach to add antenna diodes:  Add a fake antenna diode next to every cell input after placement, Run the antenna &nbsp;&nbsp;&nbsp;&nbsp;checker on the routed lyout, If that reports a violation on the cell input pin, relace fake diode by real diode. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;<img width="229" alt="Screenshot 2024-03-16 at 16 47 02" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/17be0b61-95e4-42e0-a5a6-98780f6d2917">
+
+>RC EXTRACTION : DEF to SPEF
+
+
+## GETTING INTO OPEN SOURCE EDA TOOL (UBUNTU VIRTUAL MACHINE)**:
+libs.tech is specific to the tool
+libs.ref is specific to the technology
+
 
 
 
