@@ -217,7 +217,54 @@ libs.ref is specific to the technology
 
 **Utilization factor and aspect ratio:**
 
-1) First step of the PD Flow is to define the width and hjeight of Core and Die.
+1) First step of the PD Flow is to define the width and height of Core and Die.
+&nbsp;&nbsp;&nbsp;&nbsp;<img width="200" alt="Screenshot 2024-03-16 at 23 52 07" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/ea4138a1-daea-49bf-a8c6-d49f43135409">
+
+2) Here we need to find the rough dimensions of the Cells. Here we start with basic netilist (Defines the connectivity of an electronic design). this will take cells from the synthesized netlist to find the rough dimensions of the cell.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img width="200" alt="Screenshot 2024-03-16 at 23 59 19" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/d14c7241-8959-48b3-b8a2-e94a69bd2be6">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img width="200" alt="Screenshot 2024-03-17 at 00 01 41" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/f0bd4a99-de3e-4fee-906f-43e946544799">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img width="200" alt="Screenshot 2024-03-17 at 00 03 24" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/87fef589-6ddc-4585-9890-4d177a3acfb2">
+
+3) **Utilization Factor:** Ratio of the Area Occupied by the Netlist to the Total Area of the Core.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img width="200" alt="Screenshot 2024-03-17 at 00 20 23" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/009c1d95-70e7-499d-a965-6d9358a30961">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img width="200" alt="Screenshot 2024-03-17 at 00 26 03" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/ba08fed5-6bfe-48b2-935c-4141ef21062c">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img width="200" alt="Screenshot 2024-03-17 at 00 27 46" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/3ccb121f-5a6a-4651-9a01-92520b7c7502">
+
+4) If we place cells inside the core are by utilizing 100% space like shown in above picture, then It is not possible to route the signals and to add any additional cells.
+5) If Utilization factor = 1, It means we have utilized the 100% area of the core and no extra space.
+6) So we should have utilization factor <1. So, that we can place additional logic if needed and for routing. 
+7) **Aspect Ratio:** Ratio of the Height of the Core or Die to the Width of the Core or Die.
+8) So, when ever the aspect ratio is 1. It means the chip is in the square shape. If it is any other number other than 1, It means the chip is in the rectangular shape.
+
+**Pre-placed Cells:**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img width="200" alt="Screenshot 2024-03-17 at 00 51 29" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/8c96c89a-9423-4506-b4f2-609781d274c8">
+&nbsp;&nbsp;&nbsp;&nbsp;<img width="200" alt="Screenshot 2024-03-17 at 00 53 44" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/838346e2-557c-48be-a3de-4e3ab7007205">
+&nbsp;&nbsp;&nbsp;&nbsp;<img width="200" alt="Screenshot 2024-03-17 at 00 54 46" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/31c755dd-35ce-4c86-9eff-770e45118d33">
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img width="200" alt="image" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/4209883c-e9b2-4c34-a776-f7e226051934">
+&nbsp;&nbsp;&nbsp;&nbsp;<img width="200" alt="Screenshot 2024-03-17 at 01 02 26" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/52a0a396-8316-44cb-918b-ae50af7cc304">
+
+User will define the locations to the some of the cells before starting the APR. The pre placed cell locations should be defined perfectly, as after that we can't move them in the whole design cycle. Mostly this perticular blocks are communicating with the input pins. So, we place them close to the input pins side.
+
+**Decoupling Capacitors:**
+
+
+1) 
+
+
+
+
+
+   
+
+
+
+
+
+
 
 
 
