@@ -251,8 +251,18 @@ User will define the locations to the some of the cells before starting the APR.
 
 **Decoupling Capacitors:**
 
+&nbsp;&nbsp;&nbsp;<img width="200" alt="image" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/5841985f-13da-44f5-9ab0-2d64c061faa0">
+&nbsp;&nbsp;&nbsp;<img width="200" alt="Screenshot 2024-03-17 at 01 56 21" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/67807aee-0717-4f06-8a95-793b30961382">
+&nbsp;&nbsp;&nbsp;&nbsp;<img width="200" alt="Screenshot 2024-03-17 at 01 56 43" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/978e8090-b76b-405c-974c-e26320616aaa">
 
-1) 
+&nbsp;&nbsp;&nbsp;&nbsp;<img width="200" alt="Screenshot 2024-03-17 at 02 29 23" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/2d72c44c-e722-44ac-98f2-dec0a8761686">
+
+1) By using de-coupling capacitors, we can reduce the problem of IR Drop (Voltage Drop). So, when ever there is a insufficient power to the cells decoupling-capacitors can send the required amount of power immediately with the stored charge.
+2) Name it-self says that this de-coupled from the main power supply. So, There won't be any switching activity missed and there won't be cross-talk issues.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img width="200" alt="Screenshot 2024-03-17 at 02 33 45" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/d2632ff8-2655-4c2f-966a-97c5a5d8a8a3">
+
+**POWER PLANNING:**
 
 
 
