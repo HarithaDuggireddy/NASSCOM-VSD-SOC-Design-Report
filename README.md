@@ -8,7 +8,7 @@ We have many Architectures, Here we are mainly focusing on **RISCV ARCHITECTURE*
 
 [Sky130 Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK](#section-1)
 
-Sky130 Day 2 - Good floorplan vs bad floorplan and introduction to library cells
+[Sky130 Day 2 - Good floorplan vs bad floorplan and introduction to library cells](#section-2)
 
 Sky130 Day 3 - Design library cell using Magic Layout and ngspice characterization
 
@@ -161,7 +161,7 @@ network to power the cells.
 
 &nbsp;&nbsp;&nbsp;&nbsp;5) Global Routing generated the Routing Grids, and Detailed Routing uses the routing grids to implement the actual wiring.
 
-After completing the Routing we can contnue with the signoff process by verifying the layout. Two types of verification to caryy out are Physical and Timing Verification. Physical Verification involves DRC (Design Rule Checks), LVS(Layout Vs, Schematic), and Timing verfication Involves STA (Static Timing Analysis - Set-Up and Hols Checks) 
+After completing the Routing we can contnue with the signoff process by verifying the layout. Two types of verification to caryy out are Physical and Timing Verification. Physical Verification involves DRC (Design Rule Checks), LVS(Layout Vs, Schematic), and Timing verfication Involves STA (Static Timing Analysis - Set-Up and Hold Checks) 
 
 <img width="150" alt="Screenshot 2024-03-16 at 15 28 20" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/2547ae0f-62c0-4700-bcfb-ab06d9cc45d7">
 
@@ -207,6 +207,17 @@ During the Long Metal Routes, There is chance of reactive ion etching, that caus
 ## GETTING INTO OPEN SOURCE EDA TOOL (UBUNTU VIRTUAL MACHINE)**:
 libs.tech is specific to the tool
 libs.ref is specific to the technology
+
+
+
+<a name="section-1"></a>
+## DAY2
+
+### CHIP FLOORPLAN AND CONSIDERATIONS
+
+**Utilization factor and aspect ratio:**
+
+1) First step of the PD Flow is to define the width and hjeight of Core and Die.
 
 
 
