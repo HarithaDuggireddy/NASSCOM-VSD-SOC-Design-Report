@@ -189,19 +189,19 @@ This is an optional step to perform after the Synthesis. This involves Scan Inse
 
 During the Long Metal Routes, There is chance of reactive ion etching, that causes charge to accumulate on the wire. Due to this generated charges chances of breaking the transistor gates are high. To avoid this we have two solution.
 
- &nbsp;&nbsp;&nbsp;&nbsp;1) **Bridging** : This attaches a higher metal layers in between (Requires Router Awarness)
+ &nbsp;&nbsp;&nbsp;&nbsp;1) **Bridging**: This attaches higher metal layers in between (Requires Router Awareness)
 
 &nbsp;&nbsp;&nbsp;&nbsp;<img width="383" alt="Screenshot 2024-03-16 at 16 28 39" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/a6b7ba44-99b4-40f4-8b04-25cf8c789d6b">
 
- &nbsp;&nbsp;&nbsp;&nbsp;2) **Antenna Diodes** : Adding Antenna diodes can leak away the accumulated charges (Antenna Diodes are provided by the standard Cell &nbsp;&nbsp;&nbsp;&nbsp;Library file)
+ &nbsp;&nbsp;&nbsp;&nbsp;2) **Antenna Diodes**: Adding Antenna diodes can leak away the accumulated charges (Antenna Diodes are provided by the standard Cell &nbsp;&nbsp;&nbsp;&nbsp; Library file)
 
 &nbsp;&nbsp;&nbsp;&nbsp;<img width="144" alt="Screenshot 2024-03-16 at 16 29 11" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/f473f3b2-4bae-4617-9009-d504c3dcfa16">
 
-&nbsp;&nbsp;&nbsp;&nbsp;3) Preventive approach to add antenna diodes:  Add a fake antenna diode next to every cell input after placement, Run the antenna &nbsp;&nbsp;&nbsp;&nbsp;checker on the routed lyout, If that reports a violation on the cell input pin, relace fake diode by real diode. 
+&nbsp;&nbsp;&nbsp;&nbsp;3) Preventive approach to add antenna diodes:  Add a fake antenna diode next to every cell input after placement, Run the antenna &nbsp;&nbsp;&nbsp;&nbsp; checker on the routed layout, If that reports a violation on the cell input pin, replace fake diode by real diode. 
 
 &nbsp;&nbsp;&nbsp;&nbsp;<img width="229" alt="Screenshot 2024-03-16 at 16 47 02" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/17be0b61-95e4-42e0-a5a6-98780f6d2917">
 
->RC EXTRACTION : DEF to SPEF
+>RC EXTRACTION: DEF to SPEF
 
 
 ## GETTING INTO OPEN SOURCE EDA TOOL (UBUNTU VIRTUAL MACHINE)**:
@@ -217,10 +217,10 @@ libs.ref is specific to the technology
 
 **Utilization factor and aspect ratio:**
 
-1) First step of the PD Flow is to define the width and height of Core and Die.
+1) The first step of the PD Flow is to define the width and height of the Core and Die.
 &nbsp;&nbsp;&nbsp;&nbsp;<img width="200" alt="Screenshot 2024-03-16 at 23 52 07" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/ea4138a1-daea-49bf-a8c6-d49f43135409">
 
-2) Here we need to find the rough dimensions of the Cells. Here we start with basic netilist (Defines the connectivity of an electronic design). this will take cells from the synthesized netlist to find the rough dimensions of the cell.
+2) Here, we need to find the rough dimensions of the Cells. Here, we start with basic netilist (Defines the connectivity of an electronic design). This will take cells from the synthesized netlist to find the rough dimensions of the cell.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img width="200" alt="Screenshot 2024-03-16 at 23 59 19" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/d14c7241-8959-48b3-b8a2-e94a69bd2be6">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img width="200" alt="Screenshot 2024-03-17 at 00 01 41" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/f0bd4a99-de3e-4fee-906f-43e946544799">
@@ -232,11 +232,11 @@ libs.ref is specific to the technology
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img width="200" alt="Screenshot 2024-03-17 at 00 26 03" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/ba08fed5-6bfe-48b2-935c-4141ef21062c">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img width="200" alt="Screenshot 2024-03-17 at 00 27 46" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/3ccb121f-5a6a-4651-9a01-92520b7c7502">
 
-4) If we place cells inside the core are by utilizing 100% space like shown in above picture, then It is not possible to route the signals and to add any additional cells.
-5) If Utilization factor = 1, It means we have utilized the 100% area of the core and no extra space.
-6) So we should have utilization factor <1. So, that we can place additional logic if needed and for routing. 
+4) If we place cells inside the core area by utilizing 100% space as shown in the above picture, then It is not possible to route the signals and add any additional cells.
+5) If the Utilization factor = 1, It means we have utilized the 100% area of the core and no extra space.
+6) So we should have a utilization factor <1. So, that we can place additional logic if needed and for routing. 
 7) **Aspect Ratio:** Ratio of the Height of the Core or Die to the Width of the Core or Die.
-8) So, when ever the aspect ratio is 1. It means the chip is in the square shape. If it is any other number other than 1, It means the chip is in the rectangular shape.
+8) So, whenever the aspect ratio is 1. It means the chip is in a square shape. If it is any number other than 1, It means the chip is in a rectangular shape.
 
 **Pre-placed Cells:**
 
@@ -247,7 +247,7 @@ libs.ref is specific to the technology
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img width="200" alt="image" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/4209883c-e9b2-4c34-a776-f7e226051934">
 &nbsp;&nbsp;&nbsp;&nbsp;<img width="200" alt="Screenshot 2024-03-17 at 01 02 26" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/52a0a396-8316-44cb-918b-ae50af7cc304">
 
-User will define the locations to the some of the cells before starting the APR. The pre placed cell locations should be defined perfectly, as after that we can't move them in the whole design cycle. Mostly this perticular blocks are communicating with the input pins. So, we place them close to the input pins side.
+The user will define the locations of some of the cells before starting the APR. The pre-placed cell locations should be defined perfectly, as after that, we can't move them in the whole design cycle. Mostly, these particular blocks are communicating with the input pins. So, we place them close to the input pins side.
 
 **Decoupling Capacitors:**
 
@@ -257,18 +257,59 @@ User will define the locations to the some of the cells before starting the APR.
 
 &nbsp;&nbsp;&nbsp;&nbsp;<img width="200" alt="Screenshot 2024-03-17 at 02 29 23" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/2d72c44c-e722-44ac-98f2-dec0a8761686">
 
-1) By using de-coupling capacitors, we can reduce the problem of IR Drop (Voltage Drop). So, when ever there is a insufficient power to the cells decoupling-capacitors can send the required amount of power immediately with the stored charge.
-2) Name it-self says that this de-coupled from the main power supply. So, There won't be any switching activity missed and there won't be cross-talk issues.
+1) By using de-coupling capacitors, we can reduce the problem of IR Drop (Voltage Drop). So, whenever there is insufficient power to the cells, decoupling capacitors can send the required amount of power immediately with the stored charge.
+2) The name itself says that this is de-coupled from the main power supply. So, There won't be any switching activity missed, and there won't be cross-talk issues.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img width="200" alt="Screenshot 2024-03-17 at 02 33 45" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/d2632ff8-2655-4c2f-966a-97c5a5d8a8a3">
 
-**POWER PLANNING:**
+**Power Planning:**
+
+1) The main objective of Power planning is to ensure reliable and efficient power delivery to all the components.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img width="200" alt="Screenshot 2024-03-18 at 5 49 08 PM" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/34410c7b-a2f1-47da-8702-5ef53a6d8b88"> Assume the wire connected between the macros in red color is a 16-bit bus. When the driver is sending a signal from logic 1 to 0. The complete signal should remain as same until it reaches the load. We can't connect decoupling capacitors (connected only for some critical blocks) for all the blocks. We will create a Power Distribution Network all over the chip to maintain the signal strength.
+
+As we see below, there is an inverter at the load side. So, as we pass this particular 16-bit logic to the inverter, all the capacitors charged to 1 will discharge to 0, and all the 0's to 1. 
+
+<img width = "200" alt="Screenshot 2024-03-18 at 6 09 41 PM" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/2aafd122-0b4f-4875-99fc-824fcf8ed995">
+
+
+We see  when all the charged capacitances are getting discharged at a time, and we connect only a single ground line to all the capacitors. We see the capacitors, which are supposed to be logic 0, there is a bump formed due to insufficient power to all the lines at the same time. This we call **Ground Bounce**. If the size of the bump exceeds the Noise margin level, it may enter into an undefined state.
+
+<img width = "200" alt="Screenshot 2024-03-18 at 6 11 40 PM" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/702538a0-61e0-42ae-b371-cee36487991b">
+
+In the same way, when all capacitances are getting charged at the same time that is connected to the single power supply. There is a chance of **voltage droop** (lowering of voltage) due to insufficient power supply to all the capacitors at the same time. As long as that value inside the noise margin level is not an issue, if it exceeds the NM level, outputs will be unpredictable.
+
+<img width = "200" alt="Screenshot 2024-03-18 at 6 12 11 P" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/c436ccd6-c293-46f0-9885-33509f71cf27">
+
+Building a good power distribution network can solve the **Voltage droop** and **ground Bounce** issues. If we see the below image, the power supply is coming from one source point. 
+
+<img width = "200" alt="Screenshot 2024-03-18 at 6 13 00 PM" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/9471fcc9-b9a0-49d4-98c2-f2cfc22b6f72">
+
+Here, we can see that we have multiple power and gnd supplies. So that each time when we need power and gnd supply we can take from the nearest source. 
+
+<img width = "200" alt="Screenshot 2024-03-18 at 6 13 19 PM" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/dc8680eb-9ae3-4f16-a4d0-6afdd0f136aa">
+
+The picture below shows how the Power Mesh looks like. 
+
+<img width = "200" alt="Screenshot 2024-03-18 at 6 14 03 PM" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/baffcc7f-8880-4b8e-9653-84d83014a9a4">
+
+**Pin Placement and Logical Cell placement Blockage:**
 
 
 
 
 
-   
+
+
+
+
+
+
+
+
+
+
+
 
 
 
