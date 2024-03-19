@@ -1,6 +1,6 @@
 # NASSCOM-VSD-SOC-Design-Report 
 
-SOC(System-on-Chip) : Integrating all the hardware components on to the single chip.
+SOC(System-on-Chip): Integrating all the hardware components onto the single chip.
 
 ***DIGITAL VLSI SOC DESIGN AND PLANNING***   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
 
@@ -293,14 +293,28 @@ The picture below shows how the Power Mesh looks like.
 
 <img width = "200" alt="Screenshot 2024-03-18 at 6 14 03 PM" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/baffcc7f-8880-4b8e-9653-84d83014a9a4">
 
+&nbsp;
+&nbsp;
 **Pin Placement and Logical Cell placement Blockage:**
 
+Picture A : <img width = "200" alt="Screenshot 2024-03-19 at 3 49 05 PM" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/8f97358a-9d7f-4c86-8ecd-af8c1f235a02">
 
+Picture B : <img width = "200" alt="Screenshot 2024-03-19 at 3 50 57 PM" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/ed5522cd-153d-4a9a-8b28-7378725ed66e">
 
+This is the complete circuit by combining A and B pictures:
+<img width = "200" alt="Screenshot 2024-03-19 at 3 51 18 PM" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/eddc93d5-1e16-417a-bc13-3f864de8aec9">
 
+From the above picture, we can see that there are only two clocks, Clk1 and Clk2, that are going to all flip-flops. So we can connect Clk1 and Clk2 as shown below. Now we can see here we have Din1,2,3,4 and Clk1,2 at the input side and Dout1,2,3,4 and Clkout at the output side. We can Place Input and output pins at the top and bottom (or) at the left and right (or) at the corners inside the Die as per the design. But we need to make sure the blocks that are connected to input pins are close to the input pin side and the same for the output. So that the routing will be easier. The **netlist**, which is in the Verilog/VHDL language, will have all the connection-related information. 
 
+<img width = "200" alt="Screenshot 2024-03-19 at 3 51 41 PM" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/e748010a-9ebf-466f-85c4-5085d8c6398b"> .<br>
 
+Here, we can see that pins are placed on the left and the right side of the die.
 
+<img width = "200" alt="Screenshot 2024-03-19 at 3 52 04 PM" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/658c49c2-9fd5-4213-824e-fd46ff2ca464">
+
+To block placing any other cells at pin placement we use blockages. 
+
+<img width = "200" alt= "Screenshot 2024-03-19 at 3 52 43 PM" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/094b0b39-568e-4349-b796-558a9df44cd7">
 
 
 
