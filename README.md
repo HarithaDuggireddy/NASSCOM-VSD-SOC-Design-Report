@@ -8,7 +8,7 @@ We have many Architectures, Here we are mainly focusing on **RISCV ARCHITECTURE*
 
 [Sky130 Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK](#section-1)
 
-[Theory](Day1_Theory)
+[Theory](Day1_Theory.md)
 
 [Sky130 Day 2 - Good floorplan vs bad floorplan and introduction to library cells](#section-2)
 
