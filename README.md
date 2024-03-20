@@ -1,6 +1,6 @@
 # NASSCOM-VSD-SOC-Design-Report 
 
-SOC(System-on-Chip): Integrating all the hardware components onto the single chip.
+SOC(System-on-Chip): Integrating all the hardware components onto a single chip.
 
 ***DIGITAL VLSI SOC DESIGN AND PLANNING***   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
 
@@ -307,7 +307,7 @@ From the above picture, we can see that there are only two clocks, Clk1 and Clk2
 
 <img width = "200" alt="Screenshot 2024-03-19 at 3 51 41 PM" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/e748010a-9ebf-466f-85c4-5085d8c6398b"> .<br>
 
-Here, we can see that pins are placed on the left and the right side of the die.
+Here, we can see that pins are placed on the left and the right side of the die. We need a least resistance path to the clock connection.
 
 <img width = "200" alt="Screenshot 2024-03-19 at 3 52 04 PM" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/658c49c2-9fd5-4213-824e-fd46ff2ca464">
 
@@ -316,9 +316,27 @@ To block placing any other cells at pin placement we use blockages.
 <img width = "200" alt= "Screenshot 2024-03-19 at 3 52 43 PM" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/094b0b39-568e-4349-b796-558a9df44cd7">
 
 
+### LIBRARY BINDING AND PLACEMENT
 
+**Netlist Binding and Initial place design:**
+**Placement and Routing:**
 
+1) Binding the Physical cells with the netlist
+2) Usually, in the real world, every cell is rectangular or square with some height and width. Not in the shape that we see in the books.
+3) From the circuit we have taken in the pin placement stage, We take all the cells as square or rectangular shapes, as shown below.
 
+<img width = "200" alt="Screenshot 2024-03-19 at 10 10 16 PM" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/5d30d188-59ad-4568-b151-08cd9f13bed4">
+
+4) All cell information will be stored in the **Library**.
+5) The **library** will have different-sized cells with different values. Bigger-sized cells will have less resistance and faster performance. We can pick up what we want depending on our design. 
+
+<img width = "200" alt="Screenshot 2024-03-19 at 10 27 41 PM" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/9179defa-b993-4bcf-a22f-e9c169441f01">
+
+6) We have all the required cells and floorplan; now, we need to place them on the floor plan.
+
+<img width = "200" alt="Screenshot 2024-03-19 at 10 33 02 PM" src="https://github.com/HarithaDuggireddy/NASSCOM-VSD-SOC-Design-Report/assets/163351500/69fbe55a-435c-4177-bedb-3e4ecce956fc">
+
+7) We will do this step at the floorplan stage. We place all the blocks as per their connection with respect to the Input and Output pins.
 
 
 
