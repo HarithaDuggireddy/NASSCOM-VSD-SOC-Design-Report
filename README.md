@@ -8,6 +8,8 @@ We have many Architectures, Here we are mainly focusing on **RISCV ARCHITECTURE*
 
 [Sky130 Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK](#section-1)
 
+[Day1_Theory](Theory)
+
 [Sky130 Day 2 - Good floorplan vs bad floorplan and introduction to library cells](#section-2)
 
 Sky130 Day 3 - Design library cell using Magic Layout and ngspice characterization
